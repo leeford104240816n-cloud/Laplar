@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laplar - Music Detection</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 { color: #1a73e8; }
+        #recordBtn {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 1rem;
+        }
+        #recordBtn.recording {
+            background-color: #d93025;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        #result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background: #f8f9fa;
+            min-height: 100px;
+        }
+        .track-info img {
+            width: 150px;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .track-title { font-weight: bold; font-size: 1.1rem; }
+        .track-artist { color: #5f6368; }
+        .method-tag {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            background: #e8f0fe;
+            color: #1a73e8;
+        }
+        .loading { color: #5f6368; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Laplar</h1>
+        <p>Identify music or singing</p>
+        <button id="recordBtn">Start Identification</button>
+        <div id="status">Ready</div>
+        <div id="result">
+            <p>Detection results will appear here</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
